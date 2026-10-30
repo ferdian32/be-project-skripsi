@@ -9,7 +9,7 @@ export const getDataQuiz = async (req, res) => {
     const response = await QuizModel.findAll({
       include: [
         {
-          as: "option",
+          as: "options",
           model: OptionQuizModel,
         },
       ],

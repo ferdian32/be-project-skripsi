@@ -14,6 +14,8 @@ import PerawatanModel from "./model/perawatan.js";
 import PerawatanRoute from "./routes/perawatanRoutes.js";
 import HabitatModel from "./model/habitat.js";
 import HabitatRoute from "./routes/habitatRoutes.js";
+import MemoryCardModel from "./model/memoryCard.js";
+import MemoryCardRouter from "./routes/MemoryCardRoutes.js";
 const app = express();
 const port = 3000;
 app.use(express.json());
@@ -26,6 +28,7 @@ app.use(SpesiesRoute);
 app.use(PendidikanRoute);
 app.use(PerawatanRoute);
 app.use(HabitatRoute);
+app.use(MemoryCardRouter);
 app.get("/", (req, res) => {
   res.send("Welcome to my Api");
 });
@@ -45,4 +48,6 @@ app.listen(port, async () => {
   console.log("berhasil membuat database perawatan");
   await HabitatModel.sync();
   console.log("berhasil membuat database habitat");
+  await MemoryCardModel.sync();
+  console.log("berhasil membuat database memory card");
 });

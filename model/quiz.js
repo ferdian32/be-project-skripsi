@@ -39,7 +39,7 @@ const QuizModel = database.define(
 
 QuizModel.hasMany(OptionQuizModel, {
   foreignKey: "id_quiz",
-  as: "option",
+  as: "options",
 });
 
 // Satu option dimiliki oleh satu quiz
