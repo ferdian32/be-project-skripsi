@@ -16,6 +16,7 @@ import HabitatModel from "./model/habitat.js";
 import HabitatRoute from "./routes/habitatRoutes.js";
 import MemoryCardModel from "./model/memoryCard.js";
 import MemoryCardRouter from "./routes/MemoryCardRoutes.js";
+import DetailRouter from "./routes/detailRoutes.js";
 const app = express();
 const port = 3000;
 app.use(express.json());
@@ -29,6 +30,7 @@ app.use(PendidikanRoute);
 app.use(PerawatanRoute);
 app.use(HabitatRoute);
 app.use(MemoryCardRouter);
+app.use("/detail", DetailRouter);
 app.get("/", (req, res) => {
   res.send("Welcome to my Api");
 });
